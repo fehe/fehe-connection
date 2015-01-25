@@ -52,6 +52,9 @@ With working library you need to:
 #include <fehe_connection/fehe_server.h> //for server
 #include <fehe_connection/fehe_client.h> // for client
 
+//set namespace
+using namespace FeheConnection;
+
 //create listener
 class listener: public fehe_event_listener{
 //see test_programs for content
@@ -84,6 +87,12 @@ client->disconnect();
 //end server
 server->endServer(); //NOTE: If you have any clients connected call this method before delete server. Call delete                                   server if event safetyServerEnd() occurs. We will explain this reason in detailed                                     documentation coming soon.
 ```
+
+Obviously this is no complete code, this are just example commands. For detailed using please have a look at our attached examples.
+
+Compile and link against the library on linux: g++-o foo -lFeheConnection -std=c++11 foo.cpp
+
+
 
 
 ###Coming soon:
