@@ -58,8 +58,6 @@ public:
 		virtual void onOpponentDisconnect(int socket);
 		virtual void onOpponentDisconnectUnexspected(int socket);
 
-
-
 	//server, we dont need it here
 	virtual void onClientConnect(int socket){};
 	virtual void safetyServerEnd(){};
@@ -147,12 +145,11 @@ void event_listener::onOpponentDisconnect(int socket){
 	isAlive = false;
 }
 
-void event_listener::onOpponentDisconnectUnexspected(int socket){
+void event_listener::onOpponentDisconnectUnexspected(int socket){ //When server has crashed or something else we have not exspected
 	cout << "Server killed connection unexspected" << endl;
 	cout << "Trying to reach fallback server..." << endl;
 
-	int new_socket = client->connectToFallBackServer();
-	
+	int new_socket = client->connectToFallBackServer(); //connect to fallbackserver
 	
 	if(new_socket > 0){ //check if socket is valid
 		cout << "Connected to fallback server" << endl;
@@ -181,14 +178,12 @@ int main(int argc, char* argv[]) {
 	cout << "Client is starting..." << endl;
 	client = new fehe_client(&listener); //create client with our listener
 
-	//client->setFallBackServer("127.0.0.1", 14000); //set fallback server. We will connect here if main server goes down. For this example we dont need this
-
+	client->setFallBackServer("127.0.0.1", 14000); //set fallback server. We will connect here if main server goes down. This is only optional
 
 	cout << "Client has started" << endl;
 
 //	int socket = client->connect("127.0.0.1", 13000); //connect to server on port 13000. That way you connect, but we will do this by commandline parameters.
 	
-
 	int socket;
 	if(argc > 2)
 		socket = client->connect(argv[1], atoi(argv[2]));
@@ -197,7 +192,6 @@ int main(int argc, char* argv[]) {
 		return -1;
 	}
 	
-
 	if(socket >= 0){ //check if socket is valid
 		cout << "Successfully connected to server..." << endl;
 		isAlive = true;
@@ -219,7 +213,6 @@ int main(int argc, char* argv[]) {
 	i[1] = 1337;
 	i[2] = 80;
 
-
 	string* s = new string[3];
 	s[0] = "Test1";
 	s[1] = "Test2";
@@ -237,7 +230,6 @@ int main(int argc, char* argv[]) {
 	else{
 		cout << "We are not connected :(" << endl;
 	}
-
 
 	cout << "Please press enter to send an int array..." << endl;
 	getchar();
@@ -266,7 +258,6 @@ int main(int argc, char* argv[]) {
 
 	cout << "To disconnect and end the programm press enter..." << endl;
 	getchar();
-
 
 	cout << "Client is ending" << endl;
 	client->disconnect();
