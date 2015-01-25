@@ -24,7 +24,7 @@ This will install the library (libFeheConnection.so) to /usr/lib and the include
 
 ####Compiling and installing on windows:
 
-Unfortunately we have actually no makefiles or scripts or for windows. We tested compiling and executing on windows on the IDE DevC++, but we haven't created a DLL at the moment. This feature will coming soon after we resolved the last errors within this. You can try to compile, but note that this will not install any DLLs to you system out of the box.
+Unfortunately we have actually no makefiles or scripts for windows. We tested compiling and executing on windows on the IDE DevC++, but we haven't created a DLL at the moment. This feature will coming soon after we resolved the last errors within this. You can try to compile, but note that this will not install any DLLs to you system out of the box.
 For compilation you will have to use c++11 compile flag, otherwise your compiler will complain.
 
 ###How to install the test programms:
