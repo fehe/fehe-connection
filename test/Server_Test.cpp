@@ -160,15 +160,6 @@ void event_listener::safetyServerEnd(){
 	cout << "Server is offline..." << endl;
 }
 
-void waitKey(){
-#ifdef __linux
-	getchar();
-#elif _WIN32
-	getchar(); //todo: take right function for windows
-#endif
-}
-
-
 int main(int argc, char* argv[]) {
 	event_listener listener;
 	
@@ -214,25 +205,25 @@ int main(int argc, char* argv[]) {
 	cout << endl;
 
 	cout << "Press enter to send a double array" << endl;
-	waitKey();
+	getchar();
 	if(server->getSender()->sendDoubleArray(_socket, d, 3) < 0){
 		cout << "Error on sending...:(" << endl;
 	}
 
 	cout << "Press enter to send a bool array" << endl;
-	waitKey();
+	getchar();
 	if(server->getSender()->sendBoolArray(_socket, b, 3) < 0){	
 		cout << "Error on sending...:(" << endl;
 	}
 
 	cout << "Press enter to send a long array" << endl;
-	waitKey();
+	getchar();
 	if(server->getSender()->sendLongArray(_socket, l, 3) < 0){
 		cout << "Error on sending...:(" << endl;
 	}
 
 	cout << "Press enter to send a short array" << endl;
-	waitKey();
+	getchar();
 	if(server->getSender()->sendShortArray(_socket, s, 3) < 0){
 		cout << "Error on sending...:(" << endl;
 	}
@@ -240,13 +231,13 @@ int main(int argc, char* argv[]) {
 
 
 	cout << "Press enter to shutdown the server" << endl;
-	waitKey();
+	getchar();
 	cout << "Server down" << endl;
 	server->endServer();
 
 
 	cout << "Close program..." << endl;
-	waitKey();
+	getchar();
 
 	delete[] d;
 	delete[] b;

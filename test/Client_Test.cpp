@@ -174,17 +174,6 @@ void event_listener::onVersionErrorResponse(int ownVersion, int opponentversion)
 	cout << "Our version: " << ownVersion << endl;
 }
 
-
-
-void waitKey(){
-#ifdef __linux
-	getchar();
-#elif _WIN32
-	_getchar(); //todo: take right function for windows
-#endif
-}
-
-
 int main(int argc, char* argv[]) {
 	//cout << sizeof(long long) << endl;
 	event_listener listener;
@@ -242,39 +231,32 @@ int main(int argc, char* argv[]) {
 	f[2] = 17.878;
 
 	cout << "Please press enter to send a char array..." << endl;
-	waitKey();
+	getchar();
 	if(isAlive)
 		client->sendCharArray(c, 4); //send char array
 	else{
 		cout << "We are not connected :(" << endl;
 	}
 
-	
-
 
 	cout << "Please press enter to send an int array..." << endl;
-	waitKey();
+	getchar();
 	if(isAlive)
 		client->sendIntArray(i, 3); //sende int array	
 	else{
 		cout << "We are not connected :(" << endl;
 	}
 
-	
-
-	
 	cout << "Please press enter to send a string array..." << endl;
-	waitKey();
+	getchar();
 	if(isAlive)
 		client->sendStringArray(s, 3); //sende int array	
 	else{
 		cout << "We are not connected :(" << endl;
 	}
 
-
-
 	cout << "Please press enter to send a float array..." << endl;
-	waitKey();
+	getchar();
 	if(isAlive){
 		client->sendFloatArray(f, 3); //sende int array
 	}	
@@ -283,7 +265,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	cout << "To disconnect and end the programm press enter..." << endl;
-	waitKey();
+	getchar();
 
 
 	cout << "Client is ending" << endl;
