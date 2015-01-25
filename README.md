@@ -69,15 +69,24 @@ listener::onReceiveCharArray(int socket, char* data, int length){
 ...
 
 //for creating server
-fehe_server* server = new fehe_server(port);
+fehe_server* server = new fehe_server(&listener, port);
 
 //for creating client
-fehe_client* client = new fehe_client(ip, port);
+fehe_client* client = new fehe_client(&listener);
 
-//senden von server
+//for connecting to server
+client->connect(ip, port);
+
+//set fallback server
+client->setFallbackServer(ip, port);
+
+//connect to fallback server
+client->connectToFallBackServer()
+
+//send from server
 server->getSender()->sendCharArray(socket, char* data, length);
 
-//senden von client:
+//send from client:
 client->sendCharArray(char* data, length)
 
 
