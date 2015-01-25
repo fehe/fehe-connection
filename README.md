@@ -47,7 +47,7 @@ You can compile this test program if you have a working version of the library a
 ###Quick using guide:
 
 With working library you need to:
-
+```c++
 #include <fehe_connection/fehe_listener.h>
 #include <fehe_connection/fehe_server.h> //for server
 #include <fehe_connection/fehe_client.h> // for client
@@ -83,7 +83,7 @@ client->disconnect();
 
 //end server
 server->endServer(); //NOTE: If you have any clients connected call this method before delete server. Call delete                                   server if event safetyServerEnd() occurs. We will explain this reason in detailed                                     documentation coming soon.
-
+```
 
 
 ###Coming soon:
