@@ -111,6 +111,7 @@ In the future we want to:
 - Write an detailed documentation for using the library
 - Add some features:
   - Server possibility to just disconnect one single client
+  - Support different datasizes on different systems (for example if pc1 has int size of 4 byte and pc2 8byte this lib will fail at the moment. We have to use network data format.
   - Encryption
   - time synchronisation (real time)
   - simplification of some processes
