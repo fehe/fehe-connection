@@ -6,8 +6,8 @@ This is an easy to use library for communicating over the network via sockets. I
 This library does NOT need any additional dependencies.
 
 Note: If there were any errors on compiling, installing, using or if you found bugs, please contact us and tell us about your error, so we can support you and improve the experience. You can reach us on our email-addresses: 
-  felix.froehling1@gmail.com
-  hendriku31@gmail.com
+felix.froehling1@gmail.com
+hendriku31@gmail.com
 
 ###How to install the library?
 ####Compiling and installing on linux:
